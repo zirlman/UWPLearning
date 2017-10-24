@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="PoorHamburgerMenuExample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PoorHamburgerMenuExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel>
+            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" FontSize="36" 
+                    Content="&#xE700;" Click="HamburgerButton_Click"/>
+        </RelativePanel>
+        <SplitView Grid.Row="1" Name="HamburgerSplitView" DisplayMode="CompactOverlay" OpenPaneLength="200" CompactPaneLength="56" HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" Name="IconsListBox" SelectionChanged="IconsListBox_SelectionChanged">
+                    <ListBoxItem Name="HomeListBoxItem" Tapped="ListBoxItem_Tapped">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="HomeTextBlock" FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;" Margin="0,5,0,0"/>
+                            <TextBlock Text="Home" FontSize="36" Margin="20,0,0,10"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ExploreListBoxItem" Tapped="ListBoxItem_Tapped">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ExplorerTextBlock" FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE721;" Margin="0,5,0,0" />
+                            <TextBlock Text="Explore" FontSize="36" Margin="20,0,0,10"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <WebView Grid.Row="1" Grid.Column="1" Name="MyWebView" Width="2000"/>
+        </SplitView>
+    </Grid>
+</Page>
