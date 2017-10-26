@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="SwipeLearning.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Page.Resources>
+        <SwipeItems x:Key="RevealOptions" Mode="Reveal">
+            <SwipeItem Text="Touch it" IconSource="{StaticResource TouchIcon}"/>
+            <SwipeItem Text="Eat it" IconSource="{StaticResource EatIcon}"/>
+        </SwipeItems>
+        <SwipeItems x:Key="ExecuteBuying" Mode="Execute">
+            <SwipeItem Text="Buy it" IconSource="{StaticResource BuyIcon}"/>
+        </SwipeItems>
+
+        <SymbolIconSource x:Key="TouchIcon" Symbol="MailReply"/>
+        <SymbolIconSource x:Key="EatIcon" Symbol="Delete"/>
+        <SymbolIconSource x:Key="BuyIcon" Symbol="Pin"/>
+
+    </Page.Resources>
+    <!--<ListView HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeControl x:Name="MySwipeContainer"
+                      LeftItems="{StaticResource RevealOptions}"
+                      RightItems="{StaticResource ExecuteBuying}">
+                        <ListViewItem Content="Apple" FontSize="36"/>
+                    </SwipeControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListViewItem Content="Banana" FontSize="36"/>
+            <ListViewItem Content="Grape" FontSize="36"/>
+            <ListViewItem Content="Lemon" FontSize="36"/>
+            <ListViewItem Content="Melone" FontSize="36"/>
+            <ListViewItem Content="Watermelon" FontSize="36"/>
+
+        </ListView>-->
+
+    <Grid>
+        <!--ListView x:Name="lv" Width="400" Height="300">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <SwipeControl x:Name="ListViewSwipeContainer"
+                     LeftItems="{StaticResource RevealOptions}"
+                     RightItems="{StaticResource ExecuteBuying}">
+                    </SwipeControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </>-->
+        <ListView HorizontalAlignment="Center" VerticalAlignment="Center">
+            <SwipeControl x:Name="ListViewSwipeContainer" 
+                 LeftItems="{StaticResource RevealOptions}"
+                 RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Apple" FontSize="36"/>
+            </SwipeControl>
+            <SwipeControl 
+                  LeftItems="{StaticResource RevealOptions}"
+                  RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Banana" FontSize="36"/>
+            </SwipeControl>
+            <SwipeControl 
+                  LeftItems="{StaticResource RevealOptions}"
+                  RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Grape" FontSize="36"/>
+            </SwipeControl>
+            <SwipeControl 
+                  LeftItems="{StaticResource RevealOptions}"
+                  RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Lemon" FontSize="36"/>
+            </SwipeControl>
+            <SwipeControl 
+                  LeftItems="{StaticResource RevealOptions}"
+                  RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Melone" FontSize="36"/>
+            </SwipeControl>
+            <SwipeControl
+                  LeftItems="{StaticResource RevealOptions}"
+                  RightItems="{StaticResource ExecuteBuying}">
+                <ListViewItem Content="Watermelon" FontSize="36"/>
+            </SwipeControl>
+        </ListView>
+    </Grid>
+</Page>
